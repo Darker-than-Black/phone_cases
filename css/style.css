@@ -11,6 +11,10 @@
   font-style: italic;
 }
 @font-face {
+  font-family: "Oswald - Regular";
+  src: url("../fonts/Oswald-Regular.ttf");
+}
+@font-face {
   font-family: Oswald;
   src: url("../fonts/Oswald-Medium.ttf");
   font-weight: 500;
@@ -24,38 +28,54 @@ body {
   box-sizing: border-box;
   margin: 0;
   background-color: #000;
+  color: #fff;
+}
+body > div {
+  display: none !important;
 }
 
 img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
-  display: block;
 }
 
 .modal {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100vh;
-  z-index: 9;
   background-color: #fff;
+}
+@media screen and (max-width: 1200px) {
+  .modal {
+    height: auto;
+  }
 }
 .modal__container {
   height: 90vh;
   width: 100%;
-  /*padding: 0 2%;*/
-  /*background-color: darkgreen;*/
   overflow: auto;
-  /*display: grid;*/
+}
+@media screen and (max-width: 1100px) {
+  .modal__container {
+    height: auto;
+    min-height: 90vh;
+  }
+}
+@media screen and (min-width: 768px) {
+  .modal__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 .modal__content {
   display: flex;
   height: 100%;
+  width: 100%;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 992px) {
   .modal__content {
     flex-direction: column;
+    align-items: center;
   }
 }
 .modal__col {
@@ -64,10 +84,15 @@ img {
   width: 100%;
 }
 .modal__col:first-child {
-  /*margin: 5% 5% 15% 5%;*/
   margin-left: 5%;
-  /*margin-right: 3%;*/
   justify-content: space-around;
+}
+@media screen and (max-width: 992px) {
+  .modal__col:first-child {
+    justify-content: start;
+    font-size: 45%;
+    margin: 0;
+  }
 }
 .modal__col:last-child {
   justify-content: center;
@@ -78,24 +103,33 @@ img {
     width: 50%;
   }
 }
+@media screen and (max-width: 1400px) {
+  .modal__col {
+    font-size: 80%;
+  }
+}
 .modal__named {
   position: relative;
+}
+@media screen and (max-width: 992px) {
+  .modal__named {
+    text-align: center;
+  }
 }
 .modal__title {
   color: #000000;
   font-family: "Oswald - Demi";
-  font-size: 5.25rem;
+  font-size: 5.25em;
   font-weight: 700;
   font-style: italic;
   line-height: 85.3px;
   text-transform: uppercase;
   letter-spacing: 0.72px;
-  margin-top: 0;
 }
 .modal__model {
   /*color: #d4581b;*/
   font-family: Hardcore;
-  font-size: 3.75rem;
+  font-size: 3.75em;
   font-weight: 400;
   /*line-height: 57px;*/
   text-transform: uppercase;
@@ -103,14 +137,14 @@ img {
   transform: rotate(-5deg);
   margin: 0;
   position: absolute;
-  top: 4.35rem;
-  left: 28%;
   /*right: 12%;*/
+  bottom: 1.25rem;
+  left: 26%;
 }
 .modal__description {
   color: #000000;
   font-family: "Oswald - Regular Italic";
-  font-size: 30px;
+  font-size: 1.75em;
   font-weight: 400;
   /*line-height: 60px;*/
   text-transform: uppercase;
@@ -127,24 +161,35 @@ img {
   display: flex;
   justify-content: flex-end;
 }
+@media screen and (max-width: 992px) {
+  .modal__btn {
+    padding: 0 5%;
+    display: inline-block;
+  }
+}
 .modal__btn button {
   text-shadow: 4px 3px 9px rgba(0, 0, 0, 0.17);
   color: #ffffff;
   font-family: Hardcore;
-  font-size: 3.25rem;
+  font-size: 3.25em;
   font-weight: bold;
-  line-height: 74.05px;
   text-transform: uppercase;
   letter-spacing: 1px;
   background-color: #f45a0f;
   border: none;
   position: relative;
   border-radius: 15px;
-  padding: .5rem 2.25rem;
+  padding: 1.5rem 2.27rem;
   box-shadow: 4px 3px 15px 1px rgba(0, 0, 0, 0.4), inset 0 0 22px 2px rgba(216, 41, 41, 0.2);
   outline: none;
   cursor: pointer;
   opacity: .9;
+}
+@media screen and (max-width: 992px) {
+  .modal__btn button {
+    margin: 1.5rem 0;
+    padding: 1.25rem 2.25rem;
+  }
 }
 .modal__btn button:hover {
   opacity: 1;
@@ -158,6 +203,7 @@ img {
 .modal__footer {
   height: 10vh;
   width: 100%;
+  background-color: #fff;
   display: flex;
   align-items: center;
   position: relative;
@@ -166,6 +212,16 @@ img {
   width: 7%;
   margin-left: 2%;
   transition: all .75s ease-in-out;
+}
+@media screen and (max-width: 768px) {
+  .modal__back {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .modal__back {
+    width: 18%;
+  }
 }
 .modal__back:hover {
   margin-left: .5%;

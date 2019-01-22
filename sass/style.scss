@@ -1,0 +1,217 @@
+@font-face {
+  font-family: "Oswald - Demi";
+  src: url('../fonts/Oswald-Demi-BoldItalic.ttf');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Oswald - Regular Italic";
+  src: url('../fonts/Oswald-RegularItalic.ttf');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Oswald - Regular";
+  src: url('../fonts/Oswald-Regular.ttf');
+}
+@font-face {
+  font-family: Oswald;
+  src: url('../fonts/Oswald-Medium.ttf');
+  font-weight: 500;
+}
+@font-face {
+  font-family: Hardcore;
+  src: url('../fonts/11733.otf');
+  font-weight: 400;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  background-color: #000;
+  color: #fff;
+  > div {
+    display: none !important;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.modal {
+  //position: fixed;
+  //top: 0;
+  //left: 0;
+  width: 100%;
+  height: 100vh;
+  //z-index: 9;
+  background-color: #fff;
+  @media screen and (max-width:1200px) {
+    height: auto;
+  }
+  &__container {
+    height: 90vh;
+    width: 100%;
+    overflow: auto;
+    @media screen and (max-width:1100px) {
+      height: auto;
+      min-height: 90vh;
+    }
+    @media screen and (min-width:768px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &__content {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    @media screen and (max-width: 992px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &__col {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    &:first-child {
+      margin-left: 5%;
+      justify-content: space-around;
+      @media screen and (max-width:992px) {
+        justify-content: start;
+        font-size: 45%;
+        margin: 0;
+      }
+    }
+    &:last-child {
+      justify-content: center;
+      align-items: center;
+    }
+    @media screen and (min-width: 1024px) {
+      width: 50%;
+    }
+    @media screen and (max-width: 1400px) {
+      font-size: 80%;
+    }
+  }
+  &__named {
+    position: relative;
+    @media screen and (max-width:992px) {
+      text-align: center;
+    }
+  }
+  &__title {
+    color: #000000;
+    font-family: "Oswald - Demi";
+    font-size: 5.25em;
+    font-weight: 700;
+    font-style: italic;
+    line-height: 85.3px;
+    text-transform: uppercase;
+    letter-spacing: 0.72px;
+  }
+  &__model {
+    /*color: #d4581b;*/
+    font-family: Hardcore;
+    font-size: 3.75em;
+    font-weight: 400;
+    /*line-height: 57px;*/
+    text-transform: uppercase;
+    letter-spacing: 2.24px;
+    transform: rotate(-5deg);
+    margin: 0;
+    position: absolute;
+
+    //top: 4.35rem;
+    //left: 28%;
+    /*right: 12%;*/
+    bottom: 1.25rem;
+    left: 26%;
+  }
+  &__description {
+    color: #000000;
+    font-family: "Oswald - Regular Italic";
+    font-size: 1.75em;
+    font-weight: 400;
+    /*line-height: 60px;*/
+    text-transform: uppercase;
+    letter-spacing: 0.75px;
+    @media screen and (max-width:992px) {
+      //padding: 0 5%;
+    }
+    p {
+      margin: .5rem;
+    }
+  }
+  &__img {
+    max-width: 100%;
+    margin: 5% 10%;
+  }
+  &__btn {
+    display: flex;
+    justify-content: flex-end;
+    @media screen and (max-width:992px) {
+      padding: 0 5%;
+      display: inline-block;
+    }
+    button {
+      text-shadow: 4px 3px 9px rgba(0, 0, 0, 0.17);
+      color: #ffffff;
+      font-family: Hardcore;
+      font-size: 3.25em;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background-color: #f45a0f;
+      border: none;
+      position: relative;
+      border-radius: 15px;
+      padding: 1.5rem 2.27rem;
+      box-shadow: 4px 3px 15px 1px rgba(0, 0, 0, 0.4),
+      inset 0 0 22px 2px rgba(216, 41, 41, 0.2);
+      outline: none;
+      cursor: pointer;
+      opacity: .9;
+      @media screen and (max-width:992px) {
+        margin: 1.5rem 0;
+        padding: 1.25rem 2.25rem;
+      }
+      &:hover {
+        opacity: 1;
+      }
+      &:active {
+        opacity: 1;
+        box-shadow: none;
+        left: 4px;
+        top: 3px;
+      }
+    }
+  }
+  &__footer {
+    height: 10vh;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  &__back {
+    width: 7%;
+    margin-left: 2%;
+    transition: all .75s ease-in-out;
+    @media screen and (max-width:768px) {
+      width: 30%;
+    }
+    @media screen and (max-width:992px) {
+      width: 18%;
+    }
+    &:hover {
+      margin-left: .5%;
+    }
+  }
+}
+
